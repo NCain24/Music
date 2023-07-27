@@ -10,6 +10,7 @@ import Library from './Library';
 import { Song } from '@/types';
 import usePlayer from '@/hooks/usePlayer';
 import { twMerge } from 'tailwind-merge';
+import { FaHeart } from 'react-icons/fa';
 
 interface SidebarProps {
   children: React.ReactNode;
@@ -34,6 +35,12 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
         href: '/search',
         active: pathname === 'search',
       },
+      {
+        icon: FaHeart,
+        label: 'Liked',
+        href: '/liked',
+        active: pathname === 'liked',
+      }
     ],
     [pathname]
   );
